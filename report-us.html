@@ -274,16 +274,16 @@
             <div class="app-form">
               <form id="contactForm" action="https://formspree.io/f/xvoezkdv" method="post" onsubmit="submitForm(); return false;">
                 <div class="app-form-group">
-                  <input class="app-form-control" placeholder="NAME" id="name" required>
+                  <input class="app-form-control" placeholder="NAME" id="name" name="Name " required>
                 </div>
                 <div class="app-form-group">
-                  <input type="email" class="app-form-control" placeholder="EMAIL" id="email" required>
+                  <input type="email" class="app-form-control" placeholder="EMAIL" id="email" name="E-mail " required>
                 </div>
                 <div class="app-form-group">
-                  <input type="number" class="app-form-control" placeholder="CONTACT NO" id="contactNo" required>
+                  <input type="number" class="app-form-control" placeholder="CONTACT NUMBER" id="contactNumber" name="Contact number" required>
                 </div>
                 <div class="app-form-group message">
-                  <textarea class="app-form-control" placeholder="MESSAGE" rows="7" id="message" required></textarea>
+                  <textarea class="app-form-control" placeholder="MESSAGE" rows="7" id="message" name="Message " required></textarea>
                 </div>
                 <div class="app-form-group buttons">
                   <button type="button" class="app-form-button cancel" onclick="resetForm()">CANCEL</button>
@@ -308,8 +308,14 @@
       var contactNo = document.getElementById('contactNo').value;
       var message = document.getElementById('message').value;
 
-     
-      
+      // Form validation can be performed here
+
+      // Example: Alert the submitted data
+
+
+      // Reset form fields
+      resetForm();
+    }
   </script>
 </body>
 </html>
