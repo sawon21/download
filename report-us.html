@@ -1,321 +1,478 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Report Us</title>
-  <style>
-    *, *:before, *:after {
-      box-sizing: border-box;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  
+    <title></title>
+ <style>
+   #feedback {
+  max-width: 60%;
+  width: 100%;
+  margin: 10px auto;
+  padding: 20px;
+  border: solid 1px #f1f1f1;
+  background: #fbfbfb;
+  box-shadow: #e6e6e6 0 0 4px ;
+  border-radius: 0.25rem;
+}
 
-    body {
-      background: linear-gradient(to right, black 0%, black 100%);
-      font-size: 12px;
-    }
+@media (max-width: 720px) {
+  #feedback{
+    max-width: 90%;
+  }
+}
 
-    body, button, input {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      letter-spacing: 1.4px;
-    }
+@media (max-width: 500px) {
+  #feedback{
+    padding: 10px;
+  }
+}
 
-    .background {
-      display: flex;
-      min-height: 100vh;
-    }
+#fh2{
+ padding: 2px 15px;
+ color: #ff4d4d;
+ text-align: center;
+ 
+ 
+}
 
-    .container {
-      flex: 0 1 700px;
-      margin: auto;
-      padding: 10px;
-    }
+@media (max-width: 400px) {
+  #fh2{
+    font-size: 25px;
+  }
+}
 
-    .screen {
-      position: relative;
-      background: #3e3e3e;
-      border-radius: 15px;
-    }
 
-    .screen:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 20px;
-      right: 20px;
-      bottom: 0;
-      border-radius: 15px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
-      z-index: -1;
-    }
+#fh4 {
+ padding: 2px 15px;
+ color: blue;
+ text-align: center;
+ font-weight: normal;
+}
 
-    .screen-header {
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-      background: #4d4d4f;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-    }
+@media (max-width: 400px) {
+  #fh4{
+    font-size: 16px;
+  }
+}
 
-    .screen-header-left {
-      margin-right: auto;
-    }
+.pinfo {
+ margin: 8px auto;
+ font-weight: bold;
+ line-height: 1.5;
+ color: #0d0d0d;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+  
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: bold;
+  color: black;
+  background-color: #fff;
+  background-image: none;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+}
 
-    .screen-header-button {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      margin-right: 3px;
-      border-radius: 8px;
-      background: white;
-    }
+.form-control::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
 
-    .screen-header-button.close {
-      background: #ed1c6f;
-    }
+.form-control:focus {
+  color: black;
+  background-color: #fff;
+  border: 2px solid green;
+  outline: none;
+}
 
-    .screen-header-button.maximize {
-      background: #e8e925;
-    }
+.form-control::-webkit-input-placeholder {
+  color: #F34949;
+  opacity: 1;
+}
 
-    .screen-header-button.minimize {
-      background: #74c54f;
-    }
+.form-control::-moz-placeholder {
+  color: brown;
+  opacity: 1;
+}
 
-    .screen-header-right {
-      display: flex;
-    }
+.form-control:-ms-input-placeholder {
+  color: blue;
+  opacity: 1;
+}
 
-    .screen-header-ellipsis {
-      width: 3px;
-      height: 3px;
-      margin-left: 2px;
-      border-radius: 8px;
-      background: #999;
-    }
+.form-control::placeholder {
+  color: #888;
+  opacity: 0.5;
+}
 
-    .screen-body {
-      display: flex;
-    }
+.form-control:disabled, .form-control[readonly] {
+  background-color: red;
+  opacity: 1;
+}
 
-    .screen-body-item {
-      flex: 1;
-      padding: 50px;
-    }
+.form-control:disabled {
+  cursor: not-allowed;
+}
 
-    .screen-body-item.left {
-      display: flex;
-      flex-direction: column;
-    }
+select.form-control:not([size]):not([multiple]) {
+  height: calc(2.25rem + 2px);
+}
 
-    .app-title {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      color: #ea1d6f;
-      font-size: 26px;
-    }
+select.form-control:focus::-ms-value {
+  color: green;
+  background-color: #fff;
+}
 
-    .app-title:after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      bottom: -10px;
-      width: 25px;
-      height: 4px;
-      background: #ea1d6f;
-    }
+.form-control-file,
+.form-control-range {
+  display: block;
+}
 
-    .app-contact {
-      margin-top: auto;
-      font-size: 8px;
-      color: #888;
-    }
+.input-group {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
 
-    .app-form-group {
-      margin-bottom: 15px;
-    }
+.input-group .form-control {
+  position: relative;
+  z-index: 2;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+}
 
-    .app-form-group.message {
-      margin-top: 40px;
-    }
+.input-group .form-control:focus, .input-group .form-control:active, .input-group .form-control:hover {
+  z-index: 3;
+}
 
-    .app-form-group.buttons {
-      margin-bottom: 0;
-      text-align: right;
-    }
+.input-group-addon,
+.input-group-btn,
+.input-group .form-control {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 
-    .app-form-control {
-      width: 100%;
-      padding: 10px 0;
-      background: none;
-      border: none;
-      border-bottom: 1px solid #666;
-      color: #ddd;
-      font-size: 14px;
-      outline: none;
-      transition: border-color .2s;
-    }
+.input-group-addon:not(:first-child):not(:last-child),
+.input-group-btn:not(:first-child):not(:last-child),
+.input-group .form-control:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
 
-    .app-form-control::placeholder {
-      color: #666;
-    }
+.input-group-addon,
+.input-group-btn {
+  white-space: nowrap;
+  vertical-align: middle;
+}
 
-    .app-form-control:focus {
-      border-bottom-color: #ddd;
-    }
+.input-group-addon {
+  width: 45px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.25;
+  color: #2e2e2e;
+  text-align: center;
+  background-color: #eceeef;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
 
-    .app-form-button {
-      background: none;
-      border: none;
-      color: #ea1d6f;
-      font-size: 14px;
-      cursor: pointer;
-      outline: none;
-      transition: color 0.3s ease-in-out;
-    }
+.input-group-addon.form-control-sm,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-btn > .input-group-addon.btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.2rem;
+}
 
-    .app-form-button.cancel:hover {
-      color: #888;
-    }
+.input-group-addon.form-control-lg,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .input-group-addon.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  border-radius: 0.3rem;
+}
 
-    .app-form-button:hover {
-      color: green;
-    }
+.input-group-addon input[type="radio"],
+.input-group-addon input[type="checkbox"] {
+  margin-top: 0;
+}
 
-    .credits {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
-      color: #ffa4bd;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 16px;
-      font-weight: normal;
-    }
+.input-group .form-control:not(:last-child),
+.input-group-addon:not(:last-child),
+.input-group-btn:not(:last-child) > .btn,
+.input-group-btn:not(:last-child) > .btn-group > .btn,
+.input-group-btn:not(:last-child) > .dropdown-toggle,
+.input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
 
-    .credits-link {
-      display: flex;
-      align-items: center;
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-    }
+.input-group-addon:not(:last-child) {
+  border-right: 0;
+}
 
-    .dribbble {
-      width: 20px;
-      height: 20px;
-      margin: 0 5px;
-    }
+.input-group .form-control:not(:first-child),
+.input-group-addon:not(:first-child),
+.input-group-btn:not(:first-child) > .btn,
+.input-group-btn:not(:first-child) > .btn-group > .btn,
+.input-group-btn:not(:first-child) > .dropdown-toggle,
+.input-group-btn:not(:last-child) > .btn:not(:first-child),
+.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
 
-    @media screen and (max-width: 520px) {
-      .screen-body {
-        flex-direction: column;
-      }
+.form-control + .input-group-addon:not(:first-child) {
+  border-left: 0;
+}
 
-      .screen-body-item.left {
-        margin-bottom: 30px;
-      }
+.btn {
+  display: inline-block;
+  font-weight: normal;
+  line-height: 4.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
 
-      .app-title {
-        flex-direction: row;
-      }
+.btn:focus, .btn:hover {
+  text-decoration: none;
+}
 
-      .app-title span {
-        margin-right: 12px;
-      }
+.btn:focus, .btn.focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
+          box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
+}
 
-      .app-title:after {
+.btn.disabled, .btn:disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
+
+.btn:active, .btn.active {
+  background-image: none;
+}
+
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0275d8;
+  border-color: #0275d8;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #025aa5;
+  border-color: #01549b;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);
+          box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  background-color: #0275d8;
+  border-color: #0275d8;
+}
+
+.btn-primary:active, .btn-primary.active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #025aa5;
+  background-image: none;
+  border-color: #01549b;
+}
+
+
+/* Styling for the pop-up */
+      #popup {
         display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
       }
-    }
 
-    @media screen and (max-width: 600px) {
-      .screen-body {
-        padding: 40px;
+      #popup-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
       }
 
-      .screen-body-item {
-        padding: 0;
+      #popup-content i {
+        font-size: 48px;
+        color: #27ae60; /* Green color */
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="background">
-    <div class="container">
-      <div class="screen">
-        <div class="screen-header">
-          <div class="screen-header-left">
-            <div class="screen-header-button close"></div>
-            <div class="screen-header-button maximize"></div>
-            <div class="screen-header-button minimize"></div>
-          </div>
-          <div class="screen-header-right">
-            <div class="screen-header-ellipsis"></div>
-            <div class="screen-header-ellipsis"></div>
-            <div class="screen-header-ellipsis"></div>
-          </div>
-        </div>
-        <div class="screen-body">
-          <div class="screen-body-item left">
-            <div class="app-title">
-              <span>REPORT</span>
-              <span>US</span>
-            </div>
-            <div class="app-contact">Let us know the problem you are facing.</div>
-          </div>
-          <div class="screen-body-item">
-            <div class="app-form">
-              <form id="contactForm" action="https://formspree.io/f/xvoezkdv" method="post" onsubmit="submitForm(); return false;">
-                <div class="app-form-group">
-                  <input class="app-form-control" placeholder="NAME" id="name" name="Name " required>
-                </div>
-                <div class="app-form-group">
-                  <input type="email" class="app-form-control" placeholder="EMAIL" id="email" name="E-mail " required>
-                </div>
-                <div class="app-form-group">
-                  <input type="number" class="app-form-control" placeholder="CONTACT NUMBER" id="contactNumber" name="Contact number" required>
-                </div>
-                <div class="app-form-group message">
-                  <textarea class="app-form-control" placeholder="MESSAGE" rows="7" id="message" name="Message " required></textarea>
-                </div>
-                <div class="app-form-group buttons">
-                  <button type="button" class="app-form-button cancel" onclick="resetForm()">CANCEL</button>
-                  <button type="submit" class="app-form-button">SEND</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      #popup-content h2 {
+        margin-top: 10px;
+        font-size: 24px;
+        color: #333;
+      }
+
+      #popup-content p {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #666;
+      }
+ </style>
+  </head>
+  <body>
+     <script src="https://use.fontawesome.com/a6f0361695.js"></script>
+
+<h2 id="fh2">WE APPRECIATE YOUR REVIEW!</h2>
+<h4 id="fh4">Your review will help us improve our customer service and user-friendliness standards.</h4>
+
+
+<form id="feedback" action="https://formspree.io/f/mgegrjjk" method="POST">
+  <div class="pinfo">Info</div>
+                 <input type="hidden" name="D.B Result"  value="REVIEW" />  
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+  <input  name="Name " placeholder="Full Name" class="form-control"  type="text" required="">
     </div>
   </div>
+</div>
 
-  <script>
-    function resetForm() {
-      document.getElementById('contactForm').reset();
-    }
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+    <input name="Email " type="email" class="form-control" placeholder="johndoe@gmail.com">
+     </div>
+  </div>
+</div>
 
-    function submitForm() {
-      var name = document.getElementById('name').value;
-      var email = document.getElementById('email').value;
-      var contactNo = document.getElementById('contactNo').value;
-      var message = document.getElementById('message').value;
+<!---<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+  <input  name="URL" placeholder="https://google.com" class="form-control"  type="url">
+    </div>
+  </div>
+</div>--->
 
-      // Form validation can be performed here
+ <div class="pinfo">Rate our overall services.</div>
+  
 
-      // Example: Alert the submitted data
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-heart"></i></span>
+   <select class="form-control" id="rate">
+      <option value="1star">1</option>
+      <option value="2stars">2</option>
+      <option value="3stars">3</option>
+      <option value="4stars">4</option>
+      <option value="5stars">5</option>
+    </select>
+    </div>
+  </div>
+</div>
 
+ <div class="pinfo">Write your feedback.</div>
+  
 
-      // Reset form fields
-      resetForm();
-    }
-  </script>
-</body>
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+  <textarea class="form-control" id="review" rows="6" placeholder="Please report/suggest any issues "></textarea>
+ 
+    </div>
+  </div>
+</div>
+
+ <button type="submit" class="btn btn-primary">Submit</button>
+<div id="popup">
+      <div id="popup-content">
+        <i class="fas fa-check-circle"></i>
+        <h2>Done!</h2>
+        <p>Your feedback has been submitted.</p>
+      </div>
+    </div>
+<script>
+      // Function to handle form submission
+      function submitForm(event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Show the pop-up message
+        document.getElementById("popup").style.display = "block";
+
+        // Hide the pop-up after 3 seconds
+        setTimeout(function() {
+          document.getElementById("popup").style.display = "none";
+        }, 3000);
+      }
+      
+      // Add event listener to the form for submission
+      document.getElementById("feedback").addEventListener("submit", submitForm);
+    </script>
+</form>
+  </body>
 </html>
