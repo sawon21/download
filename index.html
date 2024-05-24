@@ -2,193 +2,220 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership App Downloading page  </title>
+    <title>islmic vision </title>
     <style>
-   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');   
-      body {
-    margin: 50px;
-    font-family: 'Ubuntu', sans-serif;
-    background: #e9f0f4;
-}
-
-#wrap {
-    margin: 20px auto;
-    text-align: left;
-}
-.circle, .circle2{
-  text-align: center;
-}
-.btn-slide {
-    position: relative;
-    display: inline-block;
-    height: 35px;
-    width: 130px;
-    line-height: 30px;
-    padding: 0;
-    border-radius: 50px;
-    background: #fdfdfd;
-    border: 2px solid #0099cc;
-    margin: 5px;
-    transition: .6s;
-}
-.btn-slide2{
-  position: relative;
-    display: inline-block;
-    height: 35px;
-    width: 100px;
-    line-height: 33px;
-    padding: 0;
-    border-radius: 50px;
-    background: #fdfdfd;
-    border: 2px solid #0099cc;
-    margin: 5px;
-    transition: .6s;
-}
-.btn-slide:hover {
-    background-color: green;
-        border: 2px green;
-}
-
-.btn-slide2:hover {
-    background-color: #0099cc;
-        border: 2px #0099cc;
-        
-}
-.btn-slide:hover span.circle {
-    left: 100%;
-    margin-left: -35px;
-    background-color: #fdfdfd;
-    color: green;
-}
-
-
-.btn-slide:hover span.title {
-    left: 30px;
-    opacity: 0;
-}
-
-.btn-slide:hover span.title-hover {
-    opacity: 1;
-    left: 30px;
-}
-
-.btn-slide span.circle,.btn-slide2 span.circle2 {
-    display: block;
-    background-color: #0099cc;
-    color: #fff;
-    position: absolute;
-    float: left;
-    margin: 3px;
-    line-height: 30px;
-    height: 28px;
-    width: 28px;
-    top: 0;
-    left: 0;
-    transition: .5s;
-    border-radius: 50%;
-}
-
-.btn-slide span.title,
-  .btn-slide span.title-hover
-   {
-    position: absolute;
-    left: 38px;
-    text-align: center;
-    margin: 0 auto;
-    font-size: 16px;
-    font-weight: bold;
-    color: #30abd5;
-    transition: .5s;
-}
-.btn-slide2 span.title2 {
-  position: absolute;
-    left: 40px;
-    text-align: center;
-    margin: 0 auto;
-    font-size: 16px;
-    font-weight: bold;
-    color: #30abd5;
-}
-
-.btn-slide2 span.title2:hover{
-  color: #fff;
-}
-.btn-slide span.title-hover {
-    left: 80px;
-    opacity: 0;
-}
-
-.btn-slide span.title-hover{
-    color: #fff;
-}
-h2{
-  color: #E97451;
-  font-size: 35px;
-  font-family: bold;
-}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+        header {
+            background: linear-gradient(90deg, #ff0000, #ff9900);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background 0.5s ease;
+        }
+        header h1 {
+            margin: 0;
+            animation: fadeIn 2s;
+            
+        }
+        header h1 a {
+          text-decoration: none; 
+          color: white;
+          font-weight: bold;
+        }
+        header input {
+            width: 50%;
+            padding: 9px;
+            border-radius: 4px;
+            border: none;
+            transition: width 0.5s ease;
+        }
+        header input:focus {
+            width: 50%;
+        }
+        nav {
+            overflow-x: auto;
+            white-space: nowrap;
+            top: 95px;
+            background-color: #333;
+            padding: 15px 15px;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 999;
+            transition: background 0.5s ease;
+        }
+nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 4px;
+            animation: fadeIn 0.5s;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 15px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        .main {
+            padding: 150px 10px 10px 10px; /* Adjust padding to avoid overlap with fixed header and nav */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .video {
+            width: 100%;
+            max-width: 800px;
+            margin: 10px 0;
+            background-color: black;
+            color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .video:hover {
+            transform: scale(1.02);
+        }
+        .video iframe {
+            width: 100%;
+            height: 450px;
+        }
+        .video .info {
+            padding: 3px;
+            background: black
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
-  </head>
-  
-  
-  
-  
-  
+</head>
 <body>
 
-<h1>Download</h1> 
-<h2><pre>Membership App</pre></h2>
-<img src="Membership App.jpg" alt="Membership App Image " width="190" height="180">
-<table>
-  <tr>
-    <td><div id="wrap">
+<header>
+    <h1><a href="#">islmic vision </a></h1>
+    <input type="text" id="searchInput" placeholder="Search...">
+</header>
 
-<a href="Membership App.jpg" class="btn-slide2">
-  <span class="circle2"><i class="fa-regular fa-eye"></i></span>
-  <span class="title2">View</span>
+<nav>
+    <ul>
+        <li><a href="#" data-category="all"></a></li>
+        <li><a href="#" data-category="all"></a></li>
+        <li><a href="#" data-category="all">All</a></li>
+        <li><a href="#" data-category="Ghazal">Ghazal</a></li>
+        <li><a href="#" data-category="Waz">Waz</a></li>
+        <li><a href="#" data-category="Mizanur Rahman Azhari">Mizanur Rahman Azhari</a></li>
+        <li><a href="#" data-category="Ahmadullah">Ahmadullah</a></li>
+    </ul>
+</nav>
 
-</a>
-</div></td>
+<div class="main" id="videoContainer">
+    <div class="video" data-category="Ghazal">
+        <iframe src="https://www.youtube.com/embed/x0av9HD_Y6Q?si=5CoGj6Ml00H1CbCj" frameborder="0"  allowfullscreen></iframe>
+        <div class="info">
+            <h3> Valobashi Tomay | ভালোবাসি তোমায় | New Ghazal</h3>
+            <p>কোকিল কণ্ঠে নতুন গজল | Valobashi Tomay | ভালোবাসি তোমায় | Shafin Ahmad & Abu Taher | Holy Tune | Gojol | Islamic| kolorob | কলরব</p>
+        </div>
+    </div>
+    <div class="video" data-category="Waz">
+      <iframe src="https://www.youtube.com/embed/jwYaIezrhxY?si=NH_LBMbRjOVbNOys&amp;controls=0" frameborder="0"allowfullscreen></iframe>
+        <div class="info">
+            <h3>হতাশা থেকে বাঁচতে এই লেকচার শুনুন| আবু ত্বহা মুহাম্মদ আদনান </h3>
+            <p>Abu toha Muhammad Adnan </p>
+        </div>
+    </div>
+    <div class="video" data-category="Mizanur Rahman Azhari">
+<iframe src="https://www.youtube.com/embed/SDhHNjw4agI?si=VKofywxyTo3Xd1af&amp;controls=0" frameborder="0" allowfullscreen></iframe>
+        <div class="info">
+            <h3>উটের বিস্ময়কর সৃষ্টিশৈলী | মিজানুর রহমান আজহারি</h3>
+            <p>Mizanur Rahman Azhari </p>
+        </div>
+    </div>
+    <div class="video" data-category="Ahmadullah">
+  <iframe src="https://www.youtube.com/embed/JTiYuoaRJ30?si=Nd2Lu_x42QJ1oKeO&amp;controls=0" frameborder="0" allowfullscreen></iframe>
+        <div class="info">
+            <h3>স্রোতের বিপরীতে চলা মানুষগুলোই সফল হয়|</h3>
+            <p>Ahmadullah | আহমাদুল্লাহ | </p>
+        </div>
+    </div>
+    <div class="video" data-category="Ghazal">
+        <iframe src="https://www.youtube.com/embed/e2bDArWMDSk?si=ImQouOAxMPtsDlI-" frameborder="0"  allowfullscreen></iframe>
+        <div class="info">
+            <h3>Nabir Deshe। নবীর দেশে জন্ম কেন হলনা আমার।</h3>
+            <p>Nabir Deshe। নবীর দেশে জন্ম কেন হলনা আমার। Tawhid Jamil। Bangla Gojol 2023 | kolorob | কলরব </p>
+        </div>
+    </div>
+    <div class="video" data-category="Waz">
+<iframe  src="https://www.youtube.com/embed/0moJTllHE5w?si=DaS6xOVamm2I62yi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="info">
+            <h3>তাওবা করার পরও বারবার গুনাহ হয়ে যায়, আমার করণীয় কী? আব্দুর রাজ্জাক বিন ইউসুফ ।</h3>
+            <p> Abdur Razzak Bin Yousuf</p>
+        </div>
+    </div>
+    <!-- Add more video divs as needed -->
+</div>
 
+<script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+        let searchTerm = this.value.toLowerCase();
+        let videos = document.querySelectorAll('.video');
+        
+        videos.forEach(video => {
+            let title = video.querySelector('h3').innerText.toLowerCase();
+            let description = video.querySelector('p').innerText.toLowerCase();
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                video.classList.remove('hidden');
+            } else {
+                video.classList.add('hidden');
+            }
+        });
+    });
 
-<td><div id="wrap">
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            let category = this.getAttribute('data-category');
+            let videos = document.querySelectorAll('.video');
 
-<a href="app-release.apk" download class="btn-slide">
-  <span class="circle"><i class="fa-solid fa-cloud-arrow-down"></i></span>
-  <span class="title">Download</span>
-  <span class="title-hover">Done</span>
-</a>
-</div></td>
-  </tr>
-</table>
-<p>Download and Install the App anyway *</p>
-<marquee> <mark> ☞ App update issue : Clear the app's storage and cache occasionally if you want to update the app. </mark> </marquee>
-<p align="justify"> <b>App Description : </b><br>
-This app is for adding members of Clubs of Dinajpur Govt City College.  Through the app, members can be added to Science Club, English Language Club, Programming Club and Debate Club.  Adding member information through the app will be saved directly in the discord app's respective club specific channel.
-<br> <br>
- ⚠️ Limitation : A total of 200 members can be added in 4 clubs with 50 members in each club per month. 
- <br> <br> <b>Terms of use:</b> <br>
-<ul type="disc">
- 
-<li>First open the app and ensure internet connection.</li>
-<li>Four clubs are named inside the app.  Click on the club you want to add a member to.</li>
-<li>Then a form will appear fill the form with correct information.</li>
-<li>Submit the form by verifying that all the information is correct.</li>
-</ul>
-</p>
-
-
-
-<h3 align="right"><pre><strong>❀𝚃𝚑𝚊𝚗𝚔 𝚢𝚘𝚞  
-   </strong></pre> </h3>
-   
-<section class="copy">
-  <h4 style="color:brown"><pre>© Developed by <a style="color:green" href="https://sawon21.github.io/mehedialhasansawon21">Mehedi Al Hasan Sawon</pre> </a></h4>
-<a href="report-us.html">Report Us</a>
-</section>
-<script src="https://kit.fontawesome.com/ebd0800a84.js" crossorigin="anonymous"></script>
-
+            videos.forEach(video => {
+                if (category === 'all' || video.getAttribute('data-category') === category) {
+                    video.classList.remove('hidden');
+                } else {
+                    video.classList.add('hidden');
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
