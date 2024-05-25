@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>islmic vision </title>
+    <title>Islamic Vision</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+        @import url('https://fonts.maateen.me/apona-lohit/font.css');
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: black;
         }
         header {
@@ -26,12 +30,11 @@
         header h1 {
             margin: 0;
             animation: fadeIn 2s;
-            
         }
         header h1 a {
-          text-decoration: none; 
-          color: white;
-          font-weight: bold;
+            text-decoration: none; 
+            color: white;
+            font-weight: bold;
         }
         header input {
             width: 50%;
@@ -46,9 +49,9 @@
         nav {
             overflow-x: auto;
             white-space: nowrap;
-            top: 95px;
+            top: 115px;
             background-color: #333;
-            padding: 15px 15px;
+            padding: 10px 10px;
             display: flex;
             justify-content: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -57,7 +60,7 @@
             z-index: 999;
             transition: background 0.5s ease;
         }
-nav ul {
+        nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
@@ -103,8 +106,9 @@ nav ul {
         }
         .video .info {
             padding: 3px;
-            background: black
+            background: black;
             color: white;
+            font-family: 'AponaLohit', sans-serif;
         }
         .hidden {
             display: none;
@@ -122,7 +126,8 @@ nav ul {
 <body>
 
 <header>
-    <h1><a href="#">islmic vision </a></h1>
+    <h1><a href="">Islamic Vision</a></h1>
+    <button type="button" id="voiceSearch"><i class="fas fa-microphone"></i></button>
     <input type="text" id="searchInput" placeholder="Search...">
 </header>
 
@@ -140,45 +145,45 @@ nav ul {
 
 <div class="main" id="videoContainer">
     <div class="video" data-category="Ghazal">
-        <iframe src="https://www.youtube.com/embed/x0av9HD_Y6Q?si=5CoGj6Ml00H1CbCj" frameborder="0"  allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/x0av9HD_Y6Q?si=5CoGj6Ml00H1CbCj" frameborder="0" allowfullscreen></iframe>
         <div class="info">
-            <h3> Valobashi Tomay | ভালোবাসি তোমায় | New Ghazal</h3>
+            <h3>Valobashi Tomay | ভালোবাসি তোমায় | New Ghazal</h3>
             <p>কোকিল কণ্ঠে নতুন গজল | Valobashi Tomay | ভালোবাসি তোমায় | Shafin Ahmad & Abu Taher | Holy Tune | Gojol | Islamic| kolorob | কলরব</p>
         </div>
     </div>
     <div class="video" data-category="Waz">
-      <iframe src="https://www.youtube.com/embed/jwYaIezrhxY?si=NH_LBMbRjOVbNOys&amp;controls=0" frameborder="0"allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/jwYaIezrhxY?si=NH_LBMbRjOVbNOys&amp;controls=0" frameborder="0" allowfullscreen></iframe>
         <div class="info">
-            <h3>হতাশা থেকে বাঁচতে এই লেকচার শুনুন| আবু ত্বহা মুহাম্মদ আদনান </h3>
-            <p>Abu toha Muhammad Adnan </p>
+            <h3>হতাশা থেকে বাঁচতে এই লেকচার শুনুন| আবু ত্বহা মুহাম্মদ আদনান</h3>
+            <p>Abu Toha Muhammad Adnan</p>
         </div>
     </div>
     <div class="video" data-category="Mizanur Rahman Azhari">
-<iframe src="https://www.youtube.com/embed/SDhHNjw4agI?si=VKofywxyTo3Xd1af&amp;controls=0" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/SDhHNjw4agI?si=VKofywxyTo3Xd1af&amp;controls=0" frameborder="0" allowfullscreen></iframe>
         <div class="info">
             <h3>উটের বিস্ময়কর সৃষ্টিশৈলী | মিজানুর রহমান আজহারি</h3>
-            <p>Mizanur Rahman Azhari </p>
+            <p>Mizanur Rahman Azhari</p>
         </div>
     </div>
     <div class="video" data-category="Ahmadullah">
-  <iframe src="https://www.youtube.com/embed/JTiYuoaRJ30?si=Nd2Lu_x42QJ1oKeO&amp;controls=0" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/JTiYuoaRJ30?si=Nd2Lu_x42QJ1oKeO&amp;controls=0" frameborder="0" allowfullscreen></iframe>
         <div class="info">
-            <h3>স্রোতের বিপরীতে চলা মানুষগুলোই সফল হয়|</h3>
-            <p>Ahmadullah | আহমাদুল্লাহ | </p>
+            <h3>স্রোতের বিপরীতে চলা মানুষগুলোই সফল হয়</h3>
+            <p>Ahmadullah | আহমাদুল্লাহ</p>
         </div>
     </div>
     <div class="video" data-category="Ghazal">
-        <iframe src="https://www.youtube.com/embed/e2bDArWMDSk?si=ImQouOAxMPtsDlI-" frameborder="0"  allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/e2bDArWMDSk?si=ImQouOAxMPtsDlI-" frameborder="0" allowfullscreen></iframe>
         <div class="info">
             <h3>Nabir Deshe। নবীর দেশে জন্ম কেন হলনা আমার।</h3>
-            <p>Nabir Deshe। নবীর দেশে জন্ম কেন হলনা আমার। Tawhid Jamil। Bangla Gojol 2023 | kolorob | কলরব </p>
+            <p>Nabir Deshe। নবীর দেশে জন্ম কেন হলনা আমার। Tawhid Jamil। Bangla Gojol 2023 | kolorob | কলরব</p>
         </div>
     </div>
     <div class="video" data-category="Waz">
-<iframe  src="https://www.youtube.com/embed/0moJTllHE5w?si=DaS6xOVamm2I62yi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/0moJTllHE5w?si=DaS6xOVamm2I62yi" frameborder="0" allowfullscreen></iframe>
         <div class="info">
             <h3>তাওবা করার পরও বারবার গুনাহ হয়ে যায়, আমার করণীয় কী? আব্দুর রাজ্জাক বিন ইউসুফ ।</h3>
-            <p> Abdur Razzak Bin Yousuf</p>
+            <p>Abdur Razzak Bin Yousuf</p>
         </div>
     </div>
     <!-- Add more video divs as needed -->
@@ -215,7 +220,40 @@ nav ul {
             });
         });
     });
-</script>
 
+    const voiceSearchButton = document.getElementById('voiceSearch');
+    const searchInput = document.getElementById('searchInput');
+
+    voiceSearchButton.addEventListener('click', () => {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-US';
+        recognition.start();
+
+        recognition.onresult = (event) => {
+            const transcript = event.results[0][0].transcript;
+            searchInput.value = transcript;
+            filterVideos(transcript);
+        };
+
+        recognition.onerror = (event) => {
+            console.error('Speech recognition error:', event.error);
+        };
+    });
+
+    function filterVideos(searchTerm) {
+        searchTerm = searchTerm.toLowerCase();
+        let videos = document.querySelectorAll('.video');
+
+        videos.forEach(video => {
+            let title = video.querySelector('h3').innerText.toLowerCase();
+            let description = video.querySelector('p').innerText.toLowerCase();
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                video.classList.remove('hidden');
+            } else {
+                video.classList.add('hidden');
+            }
+        });
+    }
+</script>
 </body>
 </html>
